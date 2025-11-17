@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beranda Admin - Overview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="topbar">
+      <div class="left">
+        <div class="logo" aria-hidden>
+          <!-- simple svg logo -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <rect x="2.5" y="3" width="19" height="18" rx="3" stroke="#2b6ef6" stroke-width="1.4" fill="#fff"/>
+            <path d="M8 3v4M16 3v4" stroke="#2b6ef6" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M12 9v6" stroke="#2b6ef6" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand">Beranda Admin</div>
+      </div>
+
+      <div class="right">
+        <div class="user"><i class="fa-solid fa-gear"></i> Administrator</div>
+        <button class="btn logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+      </div>
+    </header>
+
+    <!-- TOP STAT CARDS -->
+    <section class="stats" aria-label="ringkasan">
+      <article class="stat-card">
+        <div class="stat-left">
+          <div class="label">Total Pasien</div>
+          <div class="value">245</div>
+        </div>
+        <div class="stat-ghost" aria-hidden><i class="fa-solid fa-users"></i></div>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-left">
+          <div class="label">Total Dokter</div>
+          <div class="value">12</div>
+        </div>
+        <div class="stat-ghost" aria-hidden><i class="fa-solid fa-user-doctor"></i></div>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-left">
+          <div class="label">Antrian Hari Ini</div>
+          <div class="value">35</div>
+        </div>
+        <div class="stat-ghost" aria-hidden><i class="fa-solid fa-chart-line"></i></div>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-left">
+          <div class="label">Selesai Hari Ini</div>
+          <div class="value">28</div>
+        </div>
+        <div class="stat-ghost" aria-hidden><i class="fa-solid fa-chart-simple"></i></div>
+      </article>
+    </section>
+
+    <!-- TABS -->
+    <nav class="tabs" role="tablist" aria-label="navigasi halaman">
+      <a class="tab active" href="index.html">Overview</a>
+      <a class="tab" href="kelola-dokter.html">Kelola Dokter</a>
+      <a class="tab" href="kelola-pasien.html">Kelola Pasien</a>
+    </nav>
+
+    <!-- MAIN GRID -->
+    <main class="main-grid" style="margin-top:8px;">
+      <!-- LEFT: Dokter Aktif -->
+      <section class="panel" aria-labelledby="dokter-title" style="min-height:220px">
+        <h3 id="dokter-title"><i class="fa-solid fa-user-doctor icon"></i> Dokter Aktif Hari Ini</h3>
+
+        <div class="doctor-list" style="margin-top:12px">
+          <div class="doctor-item">
+            <div class="doctor-info">
+              <div class="doctor-name">Dr. Ahmad Budiman</div>
+              <div class="doctor-role">Poli Umum</div>
+            </div>
+            <div class="doctor-actions">
+              <span class="status active">Aktif</span>
+            </div>
+          </div>
+
+          <div class="doctor-item">
+            <div class="doctor-info">
+              <div class="doctor-name">Dr. Sarah Wijaya</div>
+              <div class="doctor-role">Poli Gigi</div>
+            </div>
+            <div class="doctor-actions">
+              <span class="status active">Aktif</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: Statistik Hari Ini -->
+      <aside class="panel stat-panel" aria-labelledby="stat-title" style="min-height:220px">
+        <h3 id="stat-title"><i class="fa-solid fa-chart-simple icon"></i> Statistik Hari Ini</h3>
+
+        <div class="stat-box" style="margin-top:12px">
+          <div class="left" style="width:78%">
+            <div class="label">Antrian Menunggu</div>
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="38" style="margin-top:8px">
+              <i style="width:38%"></i>
+            </div>
+          </div>
+          <div class="stat-num" style="font-size:20px;font-weight:700">7</div>
+        </div>
+
+        <div class="stat-box alt">
+          <div class="left" style="width:78%">
+            <div class="label" style="color:#0b6b3a">Selesai Dilayani</div>
+            <div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="84" style="margin-top:8px">
+              <i style="width:84%"></i>
+            </div>
+          </div>
+          <div class="stat-num green" style="font-size:20px;font-weight:700">28</div>
+        </div>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
+s

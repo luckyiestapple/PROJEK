@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Pasien</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="page">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div class="left">
+            <div class="logo" aria-hidden>🏥</div>
+            <div class="brand">Beranda Admin</div>
+        </div>
+        <div class="right">
+            <div class="user"><i class="fa-solid fa-gear"></i> Administrator</div>
+            <button class="btn logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+        </div>
+    </header>
+
+    <!-- STAT CARDS -->
+    <section class="stats">
+        <article class="stat-card">
+            <div class="stat-left">
+                <div class="label">Total Pasien</div>
+                <div class="value">245</div>
+            </div>
+            <div class="stat-ghost"><i class="fa-solid fa-users"></i></div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-left">
+                <div class="label">Total Dokter</div>
+                <div class="value">12</div>
+            </div>
+            <div class="stat-ghost"><i class="fa-solid fa-user-doctor"></i></div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-left">
+                <div class="label">Antrian Hari Ini</div>
+                <div class="value">35</div>
+            </div>
+            <div class="stat-ghost"><i class="fa-solid fa-chart-line"></i></div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-left">
+                <div class="label">Selesai Hari Ini</div>
+                <div class="value">28</div>
+            </div>
+            <div class="stat-ghost"><i class="fa-solid fa-chart-simple"></i></div>
+        </article>
+    </section>
+
+    <!-- TABS -->
+    <nav class="tabs">
+        <a class="tab" href="index.html">Overview</a>
+        <a class="tab" href="kelola-dokter.html">Kelola Dokter</a>
+        <a class="tab active" href="kelola-pasien.html">Kelola Pasien</a>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="main">
+        <section class="panel">
+
+            <div class="panel-head">
+                <h3><i class="fa-solid fa-users icon"></i> Daftar Pasien</h3>
+                <a class="btn primary" href="#">Tambah Pasien</a>
+            </div>
+
+            <!-- LIST PASIEN -->
+            <div class="doctor-list">
+
+                <!-- ITEM 1 -->
+                <div class="patient-item">
+                    <div>
+                        <div class="patient-name">Ahmad Rizki</div>
+                        <div class="patient-sub">ahmad@email.com</div>
+                        <div class="patient-sub">081234567890</div>
+                        <div class="patient-date">Terdaftar: 10 Nov 2025</div>
+                    </div>
+                    <button class="btn small">Detail</button>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="patient-item">
+                    <div>
+                        <div class="patient-name">Siti Aminah</div>
+                        <div class="patient-sub">siti@email.com</div>
+                        <div class="patient-sub">081234567891</div>
+                        <div class="patient-date">Terdaftar: 12 Nov 2025</div>
+                    </div>
+                    <button class="btn small">Detail</button>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="patient-item">
+                    <div>
+                        <div class="patient-name">Budi Santoso</div>
+                        <div class="patient-sub">budi@email.com</div>
+                        <div class="patient-sub">081234567892</div>
+                        <div class="patient-date">Terdaftar: 14 Nov 2025</div>
+                    </div>
+                    <button class="btn small">Detail</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</div>
+</body>
+</html>

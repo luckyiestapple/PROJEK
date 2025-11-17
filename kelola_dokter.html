@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beranda Admin - Kelola Dokter</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="left">
+        <div class="logo" aria-hidden>🏥</div>
+        <div class="brand">Beranda Admin</div>
+      </div>
+      <div class="right">
+        <div class="user"><i class="fa-solid fa-gear"></i> Administrator</div>
+        <button class="btn logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+      </div>
+    </header>
+
+    <section class="stats">
+      <!-- sama seperti di index; bisa dikosongkan atau disembunyikan jika perlu -->
+      <article class="stat-card">
+        <div class="stat-left">
+          <div class="label">Total Pasien</div>
+          <div class="value">245</div>
+        </div>
+        <div class="stat-ghost"><i class="fa-solid fa-users"></i></div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-left">
+          <div class="label">Total Dokter</div>
+          <div class="value">12</div>
+        </div>
+        <div class="stat-ghost"><i class="fa-solid fa-user-doctor"></i></div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-left">
+          <div class="label">Antrian Hari Ini</div>
+          <div class="value">35</div>
+        </div>
+        <div class="stat-ghost"><i class="fa-solid fa-chart-line"></i></div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-left">
+          <div class="label">Selesai Hari Ini</div>
+          <div class="value">28</div>
+        </div>
+        <div class="stat-ghost"><i class="fa-solid fa-chart-simple"></i></div>
+      </article>
+    </section>
+
+    <nav class="tabs">
+      <a class="tab" href="index.html">Overview</a>
+      <a class="tab active" href="kelola-dokter.html">Kelola Dokter</a>
+      <a class="tab" href="kelola-pasien.html">Kelola Pasien</a>
+    </nav>
+
+    <main class="main">
+      <section class="panel">
+        <div class="panel-head">
+          <h3><i class="fa-solid fa-user-doctor icon"></i> Daftar Dokter</h3>
+          <div>
+            <a href="#" class="btn primary">Tambah Dokter</a>
+          </div>
+        </div>
+
+        <div class="doctor-list">
+          <div class="doctor-item">
+            <div class="doctor-info">
+              <div class="doctor-name">Dr. Ahmad Budiman</div>
+              <div class="doctor-role">Dokter Umum</div>
+              <span class="pili">Poli Umum</span>
+            </div>
+            <div class="doctor-actions">
+              <span class="status active">Aktif</span>
+              <button class="btn small">Edit</button>
+            </div>
+          </div>
+
+          <div class="doctor-item">
+            <div class="doctor-info">
+              <div class="doctor-name">Dr. Sarah Wijaya</div>
+              <div class="doctor-role">Dokter Gigi</div>
+              <span class="pili">Poli Gigi</span>
+            </div>
+            <div class="doctor-actions">
+              <span class="status active">Aktif</span>
+              <button class="btn small">Edit</button>
+            </div>
+          </div>
+
+          <div class="doctor-item">
+            <div class="doctor-info">
+              <div class="doctor-name">Dr. Budi Santoso</div>
+              <div class="doctor-role">Dokter Mata</div>
+              <span class="pili">Poli Mata</span>
+            </div>
+            <div class="doctor-actions">
+              <span class="status inactive">Tidak Aktif</span>
+              <button class="btn small">Edit</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
