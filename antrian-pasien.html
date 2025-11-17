@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrian Pasien - Beranda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="logo">
+            <span class="material-icons-sharp">dashboard</span>
+            <h1>Beranda Dokter</h1>
+        </div>
+        <div class="user-menu">
+            <span class="user-name">Dr. Ahmad</span>
+            <a href="#" class="logout-link">Logout</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="check-in-banner">
+            <div class="banner-text">
+                <strong>Belum Check-in</strong>
+                <p>Silakan check-in untuk memulai praktik hari ini</p>
+            </div>
+            <button class="check-in-btn">Check-in</button>
+        </section>
+
+        <nav class="tabs">
+            <ul>
+                <li><a href="data dokter.html">Data Dokter</a></li>
+                <li><a href="jadwal dokter.html">Jadwal Dokter</a></li>
+                <li><a href="antrian-pasien.html" class="active">Antrian Pasien</a></li>
+                <li><a href="review-rekap.html" class="active">Review/Rekap</a></li>
+            </ul>
+        </nav>
+
+        <section class="content-card">
+            <div class="card-header">
+                <span class="material-icons-sharp">groups</span>
+                <h2>Daftar Antrian Pasien di Poli</h2>
+            </div>
+            
+            <div class="queue-body">
+                
+                <div class="queue-item">
+                    <div class="queue-info">
+                        <span class="queue-number">No. 1</span>
+                        <span class="patient-name">Ahmad Rizki</span>
+                        <button class="queue-btn btn-selesai" disabled>Selesai</button>
+                    </div>
+                    <div class="queue-status">
+                        <a href="#" class="status-link">Ulangi Pindai</a>
+                    </div>
+                </div>
+
+                <div class="queue-item">
+                    <div class="queue-info">
+                        <span class="queue-number">No. 2</span>
+                        <span class="patient-name">Siti Aminah</span>
+                        <button class="queue-btn btn-panggil">Panggil</button>
+                    </div>
+                    <div class="queue-status">
+                        <span class="status-text">Menunggu</span>
+                    </div>
+                </div>
+
+                <div class="queue-item">
+                    <div class="queue-info">
+                        <span class="queue-number">No. 3</span>
+                        <span class="patient-name">Budi Santoso</span>
+                        <button class="queue-btn btn-panggil">Panggil</button>
+                    </div>
+                    <div class="queue-status">
+                        <span class="status-text">Menunggu</span>
+                    </div>
+                </div>
+
+                <div class="queue-item">
+                    <div class="queue-info">
+                        <span class="queue-number">No. 4</span>
+                        <span class="patient-name">Dewi Lestari</span>
+                        <button class="queue-btn btn-panggil">Panggil</button>
+                    </div>
+                    <div class="queue-status">
+                        <span class="status-text">Menunggu</span>
+                    </div>
+                </div>
+
+                <div class="queue-item">
+                    <div class="queue-info">
+                        <span class="queue-number">No. 5</span>
+                        <span class="patient-name">Eko Prasetyo</span>
+                        <button class="queue-btn btn-panggil">Panggil</button>
+                    </div>
+                    <div class="queue-status">
+                        <span class="status-text">Menunggu</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

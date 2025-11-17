@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Dokter - Beranda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="logo">
+            <span class="material-icons-sharp">dashboard</span>
+            <h1>Beranda Dokter</h1>
+        </div>
+        <div class="user-menu">
+            <span class="user-name">Dr. Ahmad</span>
+            <a href="#" class="logout-link">Logout</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="check-in-banner">
+            <div class="banner-text">
+                <strong>Belum Check-in</strong>
+                <p>Silakan check-in untuk memulai praktik hari ini</p>
+            </div>
+            <button class="check-in-btn">Check-in</button>
+        </section>
+
+        <nav class="tabs">
+            <ul>
+                <li><a href="data dokter.html">Data Dokter</a></li>
+                <li><a href="jadwal dokter.html" class="active">Jadwal Dokter</a></li>
+                <li><a href="antrian-pasien.html">Antrian Pasien</a></li>
+                <li><a href="review-rekap.html" class="active">Review/Rekap</a></li>
+            </ul>
+        </nav>
+
+        <section class="content-card">
+            <div class="card-header">
+                <span class="material-icons-sharp">calendar_today</span>
+                <h2>Jadwal Praktik</h2>
+            </div>
+            
+            <div class="schedule-body">
+                <div class="schedule-item">
+                    <div class="schedule-day-time">
+                        <span class="day">Senin</span>
+                        <span class="time">08:00 - 12:00</span>
+                    </div>
+                    <div class="schedule-poli">
+                        <span class="poli-badge">Poli Umum</span>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-day-time">
+                        <span class="day">Rabu</span>
+                        <span class="time">08:00 - 12:00</span>
+                    </div>
+                    <div class="schedule-poli">
+                        <span class="poli-badge">Poli Umum</span>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-day-time">
+                        <span class="day">Jumat</span>
+                        <span class="time">13:00 - 17:00</span>
+                    </div>
+                    <div class="schedule-poli">
+                        <span class="poli-badge">Poli Umum</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+/* --- Global Reset & Font --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f9ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- 1. Header Utama --- */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #0052cc;
+}
+
+.logo .material-icons-sharp {
+    font-size: 24px;
+    margin-right: 0.5rem;
+}
+
+.logo h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu .user-name {
+    font-weight: 500;
+    margin-right: 1.5rem;
+}
+
+.user-menu .logout-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* --- 2. Konten Utama --- */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2.5rem;
+}
+
+/* --- 2a. Banner Check-in --- */
+.check-in-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fffbeb;
+    border: 1px solid #fff0c2;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.banner-text strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.banner-text p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.check-in-btn {
+    background-color: #0052cc;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.check-in-btn:hover {
+    background-color: #0041a3;
+}
+
+/* --- 2b. Navigasi Tab --- */
+.tabs ul {
+    display: flex;
+    list-style: none;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 2rem;
+}
+
+.tabs li {
+    margin-right: 2rem;
+}
+
+.tabs a {
+    display: block;
+    text-decoration: none;
+    color: #777;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 0.25rem;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tabs a.active {
+    color: #0052cc;
+    border-bottom-color: #0052cc;
+    font-weight: 600;
+}
+
+/* --- 2c. Kartu Konten --- */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header .material-icons-sharp {
+    color: #0052cc;
+    font-size: 22px;
+}
+
+.card-header h2 {
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* ======================================================
+   GAYA KHUSUS: Konten Tab "Data Dokter" (Grid 2 Kolom)
+   ====================================================== */
+.card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem; /* Beri jarak antar item jika perlu */
+}
+
+.info-item .label {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0.25rem;
+}
+
+.info-item .value {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* =========================================================
+   GAYA KHUSUS: Konten Tab "Jadwal Dokter" (Daftar)
+   ========================================================= */
+.schedule-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-day-time .day {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.schedule-day-time .time {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.poli-badge {
+    background-color: #e6f0ff;
+    color: #0052cc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.queue-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.queue-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem; /* Padding sedikit disesuaikan */
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.queue-item:last-child {
+    border-bottom: none;
+}
+
+.queue-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* Memberi jarak antar elemen di info */
+}
+
+.queue-number {
+    font-size: 0.85rem;
+    color: #777;
+    font-weight: 500;
+}
+
+.patient-name {
+    font-size: 1.05rem; /* Sedikit lebih besar dari teks biasa */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem; /* Jarak ke tombol */
+}
+
+.queue-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Tombol Panggil (Hitam/Gelap) */
+.btn-panggil {
+    background-color: #343a40;
+    color: white;
+    transition: background-color 0.2s;
+}
+.btn-panggil:hover {
+    background-color: #23272b;
+}
+
+/* Tombol Selesai (Abu-abu/Disabled) */
+.btn-selesai {
+    background-color: #f0f0f0;
+    color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.queue-status {
+    min-width: 100px; /* Agar rapi */
+    text-align: right;
+}
+
+.status-link {
+    color: #0052cc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.status-link:hover {
+    text-decoration: underline;
+}
+
+.status-text {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: 500;
+}
+/* =========================================================
+   GAYA KHUSUS: Konten Tab "Review/Rekap"
+   ========================================================= */
+.recap-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.recap-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.recap-item:last-child {
+    border-bottom: none;
+}
+
+.recap-date {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 1.25rem; /* Jarak antara tanggal dan statistik */
+}
+
+.recap-stats {
+    display: grid;
+    /* Buat 3 kolom statistik yang sama lebar */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem; /* Jarak antar blok statistik */
+}
+
+.stat-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
