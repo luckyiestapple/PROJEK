@@ -1,108 +1,107 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Review Rekap - Beranda</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="top-header">
-        <div class="logo">
-            <span class="material-icons-sharp">dashboard</span>
-            <h1>Beranda Dokter</h1>
-        </div>
-        <div class="user-menu">
-            <span class="user-name">Dr. Ahmad</span>
-            <a href="#" class="logout-link">Logout</a>
-        </div>
+      <div class="logo">
+        <span class="material-icons-sharp">dashboard</span>
+        <h1>Beranda Dokter</h1>
+      </div>
+      <div class="user-menu">
+        <span class="user-name">Dr. Ahmad</span>
+        <a href="#" class="logout-link">Logout</a>
+      </div>
     </header>
 
     <main class="container">
-        <section class="check-in-banner">
-            <div class="banner-text">
-                <strong>Belum Check-in</strong>
-                <p>Silakan check-in untuk memulai praktik hari ini</p>
+      <section class="check-in-banner">
+        <div class="banner-text">
+          <strong>Belum Check-in</strong>
+          <p>Silakan check-in untuk memulai praktik hari ini</p>
+        </div>
+        <button class="check-in-btn">Check-in</button>
+      </section>
+
+      <nav class="tabs">
+        <ul>
+          <li><a href="data dokter.html">Data Dokter</a></li>
+          <li><a href="jadwal dokter.html">Jadwal Dokter</a></li>
+          <li><a href="antrian-pasien.html">Antrian Pasien</a></li>
+          <li><a href="review-rekap.html" class="active">Review/Rekap</a></li>
+        </ul>
+      </nav>
+
+      <section class="content-card">
+        <div class="card-header">
+          <span class="material-icons-sharp">description</span>
+          <h2>Rekap/Review Dokter</h2>
+        </div>
+
+        <div class="recap-body">
+          <div class="recap-item">
+            <span class="recap-date">15 Nov 2025</span>
+            <div class="recap-stats">
+              <div class="stat-block">
+                <span class="stat-label">Pasien Ditangani</span>
+                <span class="stat-value">12</span>
+              </div>
+              <div class="stat-block">
+                <span class="stat-label">Rata-rata Waktu</span>
+                <span class="stat-value">15 menit</span>
+              </div>
+              <div class="stat-block">
+                <span class="stat-label">Total Jam Praktik</span>
+                <span class="stat-value">4 jam</span>
+              </div>
             </div>
-            <button class="check-in-btn">Check-in</button>
-        </section>
+          </div>
 
-        <nav class="tabs">
-            <ul>
-                <li><a href="data dokter.html">Data Dokter</a></li>
-                <li><a href="jadwal dokter.html">Jadwal Dokter</a></li>
-                <li><a href="antrian-pasien.html">Antrian Pasien</a></li>
-                <li><a href="review-rekap.html" class="active">Review/Rekap</a></li>
-            </ul>
-        </nav>
-
-        <section class="content-card">
-            <div class="card-header">
-                <span class="material-icons-sharp">description</span>
-                <h2>Rekap/Review Dokter</h2>
+          <div class="recap-item">
+            <span class="recap-date">13 Nov 2025</span>
+            <div class="recap-stats">
+              <div class="stat-block">
+                <span class="stat-label">Pasien Ditangani</span>
+                <span class="stat-value">15</span>
+              </div>
+              <div class="stat-block">
+                <span class="stat-label">Rata-rata Waktu</span>
+                <span class="stat-value">17 menit</span>
+              </div>
+              <div class="stat-block">
+                <span class="stat-label">Total Jam Praktik</span>
+                <span class="stat-value">4.5 jam</span>
+              </div>
             </div>
-            
-            <div class="recap-body">
-                
-                <div class="recap-item">
-                    <span class="recap-date">15 Nov 2025</span>
-                    <div class="recap-stats">
-                        <div class="stat-block">
-                            <span class="stat-label">Pasien Ditangani</span>
-                            <span class="stat-value">12</span>
-                        </div>
-                        <div class="stat-block">
-                            <span class="stat-label">Rata-rata Waktu</span>
-                            <span class="stat-value">15 menit</span>
-                        </div>
-                        <div class="stat-block">
-                            <span class="stat-label">Total Jam Praktik</span>
-                            <span class="stat-value">4 jam</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
 
-                <div class="recap-item">
-                    <span class="recap-date">13 Nov 2025</span>
-                    <div class="recap-stats">
-                        <div class="stat-block">
-                            <span class="stat-label">Pasien Ditangani</span>
-                            <span class="stat-value">15</span>
-                        </div>
-                        <div class="stat-block">
-                            <span class="stat-label">Rata-rata Waktu</span>
-                            <span class="stat-value">17 menit</span>
-                        </div>
-                        <div class="stat-block">
-                            <span class="stat-label">Total Jam Praktik</span>
-                            <span class="stat-value">4.5 jam</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="recap-item">
-                    <span class="recap-date">10 Nov 2025</span>
-                    <div class="recap-stats">
-                        <div class="stat-block">
-                            <span class="stat-label">Pasien Ditangani</span>
-                            <span class="stat-value">10</span>
-                        </div>
-                        <div class="stat-block">
-                            <span class="stat-label">Rata-rata Waktu</span>
-                            <span class="stat-value">18 menit</span>
-                        </div>
-                        <div class="stat-block">
-                            <span class="stat-label">Total Jam Praktik</span>
-                            <span class="stat-value">3.5 jam</span>
-                        </div>
-                    </div>
-                </div>
-
+          <div class="recap-item">
+            <span class="recap-date">10 Nov 2025</span>
+            <div class="recap-stats">
+              <div class="stat-block">
+                <span class="stat-label">Pasien Ditangani</span>
+                <span class="stat-value">10</span>
+              </div>
+              <div class="stat-block">
+                <span class="stat-label">Rata-rata Waktu</span>
+                <span class="stat-value">18 menit</span>
+              </div>
+              <div class="stat-block">
+                <span class="stat-label">Total Jam Praktik</span>
+                <span class="stat-value">3.5 jam</span>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
-
-</body>
+  </body>
 </html>

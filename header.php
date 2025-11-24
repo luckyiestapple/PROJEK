@@ -58,7 +58,7 @@ $active = basename($_SERVER['PHP_SELF']); // ex: data-dokter.php
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beranda Dokter</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styledokter.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-store" />
 </head>
