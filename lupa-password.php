@@ -1,0 +1,97 @@
+<?php
+// PROSES JIKA FORM DIKIRIM
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST["email"] ?? "";
+
+    // Koneksi database
+    $koneksi = new mysqli("localhost", "root", "", "rumahsakit");
+
+    // Cek koneksi
+    if ($koneksi->connect_error) {
+        die("Koneksi gagal: " . $koneksi->connect_error);
+    }
+
+    // Cek apakah email terdaftar
+    $query = $koneksi->query("SELECT * FROM users WHERE email='$email'");
+
+    if ($query->num_rows > 0) {
+        echo "<script>alert('Link reset password telah dikirim ke email Anda!');</script>";
+    } else {
+        echo "<script>alert('Email tidak ditemukan!');</script>";
+    }
+
+    $koneksi->close();
+}
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Antrian RS - Lupa Password</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body { background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        
+        .card { background: white; width: 100%; max-width: 500px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding: 40px; border: 1px solid #eaeaea; }
+        
+        .header { text-align: center; margin-bottom: 30px; color: #1e40af; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .header i { font-size: 1.8rem; } 
+        .header h2 { font-weight: 600; font-size: 1.5rem; }
+        
+        .tabs { display: flex; background-color: #e9ecef; border-radius: 50px; padding: 5px; margin-bottom: 30px; }
+        .tab-item { flex: 1; text-align: center; padding: 10px; border-radius: 50px; cursor: pointer; font-weight: 500; color: #495057; font-size: 0.9rem; text-decoration: none; }
+        .tab-item.active { background-color: white; color: #000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+        .form-group { margin-bottom: 20px; } 
+        .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: #1f2937; }
+
+        .input-wrapper { position: relative; } 
+        .input-wrapper i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af; }
+
+        .form-control { width: 100%; padding: 12px 15px 12px 45px; background-color: #f3f4f6; border: 1px solid transparent; border-radius: 8px; font-size: 0.95rem; color: #333; transition: 0.3s; }
+        .form-control:focus { outline: none; background-color: white; border-color: #1e40af; }
+
+        .btn-submit { background-color: #0f172a; color: white; width: 100%; padding: 14px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 10px; transition: background 0.3s; } 
+        .btn-submit:hover { background-color: #1e293b; }
+
+        .footer { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #6b7280; } 
+        .footer a { color: #1e40af; text-decoration: none; font-weight: 600; } 
+        .footer a:hover { text-decoration: underline; }
+
+        .desc { text-align: center; color: #666; margin-bottom: 20px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header"><i class="fa-solid fa-hospital"></i><h2>Sistem Antrian RS</h2></div>
+
+        <div class="tabs">
+            <a href="signin.php" class="tab-item">Sign In</a>
+            <a href="register.php" class="tab-item">Register</a>
+            <a href="lupa-password.php" class="tab-item active">Lupa Password</a>
+        </div>
+
+        <div class="desc">Masukkan email yang terdaftar. Kami akan mengirimkan link untuk mereset password Anda.</div>
+
+        <form action="" method="POST">
+            <div class="form-group">
+                <label>Email Terdaftar</label>
+                <div class="input-wrapper">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" name="email" required class="form-control" placeholder="nama@email.com">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Kirim Link Reset</button>
+
+            <div class="footer">
+                Ingat password? <a href="signin.php">Kembali ke Sign In</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
