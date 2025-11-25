@@ -71,7 +71,7 @@ $active = basename($_SERVER['PHP_SELF']); // ex: data-dokter.php
   </div>
   <div class="user-menu">
     <span class="user-name"><?= htmlspecialchars(($dokter['nama'] ?? 'Dokter')) ?></span>
-    <a href="logout.php" class="logout-link">Logout</a>
+    <a href="signin.php" class="logout-link">Logout</a>
   </div>
 </header>
 

@@ -48,7 +48,7 @@ $stmt->close();
 // --- Daftar Pemeriksaan (Tabel: pemeriksaan - diasumsikan ada) ---
 $daftar_pemeriksaan = [];
 $sql = "SELECT jenis_pemeriksaan, tanggal_pemeriksaan, status 
-        FROM pemeriksaan WHERE id_pasien = ? ORDER BY tanggal_pemeriksaan DESC";
+        FROM pemeriksaan WHERE id_pasien = ? ORDER BY tanggal_pemeriksaan ASC";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_pasien_login);
 $stmt->execute();
@@ -72,7 +72,7 @@ $sql = "SELECT rm.tanggal_periksa, rm.diagnosis, rm.catatan, d.nama AS nama_dokt
         FROM rekam_medis rm
         JOIN dokter d ON rm.id_dokter = d.id 
         WHERE rm.id_pasien = ?
-        ORDER BY rm.tanggal_periksa DESC";
+        ORDER BY rm.tanggal_periksa ASC";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_pasien_login);
@@ -91,9 +91,8 @@ $stmt->close();
 
 // --- Riwayat Laporan (Tabel: laporan) ---
 $riwayat_laporan = [];
-// Kolom laporan: id_laporan, id_pasien, tanggal_laporan, jenis_laporan, file_path
 $sql = "SELECT tanggal_laporan, jenis_laporan, file_path 
-        FROM laporan WHERE id_pasien = ? ORDER BY tanggal_laporan DESC";
+        FROM laporan WHERE id_pasien = ? ORDER BY tanggal_laporan ASC";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_pasien_login);
@@ -109,7 +108,7 @@ while ($row = $res->fetch_assoc()) {
 }
 $stmt->close();
 
-// --- Daftar Poli (MANUAL: untuk Radio Button Pendaftaran) ---
+// --- Daftar Poli ---
 $daftar_poli = [
     "Poli Anak", 
     "Poli Gigi", 
@@ -119,9 +118,8 @@ $daftar_poli = [
     "Poli THT"
 ];
 
-// --- Jadwal Dokter (Tabel: jadwal_dokter JOIN dokter) ---
+// --- Jadwal Dokter ---
 $jadwal_dokter = [];
-// Kolom dokter: nama, spesialisasi | Kolom jadwal_dokter: hari, jam_mulai, jam_selesai
 $sql = "SELECT 
             d.nama AS nama_dokter,
             d.spesialisasi,
@@ -154,7 +152,7 @@ if ($res_jadwal) {
     <title>Halaman Pasien</title>
 
     <style>
-      /* --- CSS STANDAR (dari indexpasien.html) --- */
+      /* --- CSS --- */
       body {
         margin: 0;
         font-family: "Inter", sans-serif;
@@ -302,8 +300,6 @@ if ($res_jadwal) {
         cursor: pointer;
         margin-top: 10px;
       }
-
-      /* --- CSS UNTUK RADIO BUTTON SEPERTI TOMBOL (SESUAI PERMINTAAN) --- */
       .poli-radio-options {
           display: flex;
           flex-wrap: wrap; 
@@ -311,11 +307,9 @@ if ($res_jadwal) {
           margin-top: 5px;
       }
       .poli-radio-options input[type="radio"] {
-          /* Sembunyikan radio button bawaan */
           display: none;
       }
       .btn-radio {
-          /* Gaya Label agar terlihat seperti Tombol */
           padding: 10px 15px;
           border: 1px solid #ccc;
           background: #f0f0f0;
@@ -328,8 +322,6 @@ if ($res_jadwal) {
           text-align: center;
           min-width: fit-content;
       }
-
-      /* Gaya Label (Tombol) saat Radio Button AKTIF/Terpilih */
       .poli-radio-options input[type="radio"]:checked + .btn-radio {
           background: #0f0f18; 
           color: white; 
@@ -373,7 +365,6 @@ if ($res_jadwal) {
                     if (!empty($daftar_poli)) {
                         foreach ($daftar_poli as $index => $poli) {
                             $id_radio = 'poli_' . $index;
-                            // FIX: Menambahkan 'checked' pada opsi pertama (index 0)
                             $checked = ($index === 0) ? 'checked' : ''; 
                             
                             echo '<input type="radio" id="' . $id_radio . '" name="jenis_pemeriksaan" value="' . htmlspecialchars($poli) . '" ' . $checked . ' required>';
@@ -535,7 +526,6 @@ if ($res_jadwal) {
     </section>
 
     <script>
-        // Fungsi Tab Navigasi
         function showPage(name) {
             document
               .querySelectorAll(".page")
@@ -545,12 +535,8 @@ if ($res_jadwal) {
             document
               .querySelectorAll(".tab")
               .forEach((t) => t.classList.remove("active"));
-            
-            // Menambahkan class active pada tab yang diklik
             event.target.classList.add("active");
         }
-        
-        // Fungsi Modal
         function openModal(id){
             document.getElementById(id).style.display = "block";
         }
@@ -558,8 +544,6 @@ if ($res_jadwal) {
         function closeModal(id){
             document.getElementById(id).style.display = "none";
         }
-        
-        // Menutup modal jika klik di luar
         window.onclick = function(event) {
             const modal = document.getElementById('tambahPemeriksaanModal');
             if (event.target == modal) {
